@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Skincare App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>¡Bienvenida, <span id="usernameDisplay">Usuario</span>!</h1>
+    <p>Este es tu panel de control.</p>
+    <button id="logoutBtn">Cerrar sesión</button>
+  </div>
+
+  <script>
+    // Mostrar usuario (ejemplo simple)
+    const usernameDisplay = document.getElementById('usernameDisplay');
+    usernameDisplay.textContent = localStorage.getItem('username') || 'Usuario';
+
+    // Cerrar sesión
+    const logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('username');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
