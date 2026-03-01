@@ -1,35 +1,9 @@
 <!-- frontend/login.html -->
 <form id="loginForm">
-    <input type="email" id="email" placeholder="Correo" required />
-    <input type="password" id="password" placeholder="Contraseña" required />
-    <button type="submit">Iniciar sesión</button>
-  </form>
-  
-  <script>
-  const form = document.getElementById('loginForm');
-  
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-  
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-  
-    try {
-      const res = await fetch('https://skincare-backend.onrender.com/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
-  
-      const data = await res.json();
-      alert(data.message);
-  
-      if (res.ok) {
-        window.location.href = 'dashboard.html';
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Error al iniciar sesión');
-    }
-  });
-  </script>
+  <input type="email" id="email" placeholder="Correo" required />
+  <input type="password" id="password" placeholder="Contraseña" required />
+  <button type="submit">Iniciar sesión</button>
+</form>
+
+<!-- Enlazamos tu archivo externo script.js -->
+<script src="script.js"></script>

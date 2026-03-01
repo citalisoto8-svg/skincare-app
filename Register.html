@@ -1,33 +1,10 @@
 <!-- frontend/register.html -->
 <form id="registerForm">
-    <input type="text" id="username" placeholder="Usuario" required />
-    <input type="email" id="email" placeholder="Correo" required />
-    <input type="password" id="password" placeholder="Contraseña" required />
-    <button type="submit">Registrarse</button>
-  </form>
-  
-  <script>
-  const form = document.getElementById('registerForm');
-  
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-  
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-  
-    try {
-      const res = await fetch('https://skincare-backend.onrender.com/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, email, password })
-      });
-  
-      const data = await res.json();
-      alert(data.message);
-    } catch (err) {
-      console.error(err);
-      alert('Error al registrarse');
-    }
-  });
-  </script>
+  <input type="text" id="username" placeholder="Usuario" required />
+  <input type="email" id="email" placeholder="Correo" required />
+  <input type="password" id="password" placeholder="Contraseña" required />
+  <button type="submit">Registrarse</button>
+</form>
+
+<!-- Enlazamos tu archivo script.js -->
+<script src="script.js"></script>
